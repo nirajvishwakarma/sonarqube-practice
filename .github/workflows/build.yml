@@ -16,7 +16,7 @@ jobs:
         with:
           projectBaseDir: /home/neosoft/sonarqube-practice
           args: >
-            -Dsonar.projectKey=Event-Management
+            -Dsonar.projectKey=Event-Management1
             -Dsonar.login=admin
             -Dsonar.password=niraj
         env:
