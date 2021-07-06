@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master # or the name of your main branches
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: docker://sonarsource/sonar-scanner-cli
+        with:
+          projectBaseDir: /home/neosoft/sonarqube-practice
+          args: >
+            -Dsonar.projectKey=Event-Management
+            -Dsonar.login=admin
+            -Dsonar.password=niraj
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
