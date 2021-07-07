@@ -1,0 +1,3 @@
+sonar.projectKey=sonarqube-practice
+sonar.sources=./home/neosoft/sonarqube-practice
+

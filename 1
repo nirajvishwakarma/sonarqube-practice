@@ -1,0 +1,13 @@
+const scanner = require("sonarqube-scanner");
+scanner({
+serverUrl : 'http://192.168.1.102:9000/',
+token : "52b0e6ebb13e1778fefcbc93fdd810ae608a649a",
+options: {
+"sonar.projectKey": "Event-Management",
+"sonar.sources": "/home/neosoft/sonarqube-practice"
+},
+},
+() => {
+// callback is required
+}
+);
